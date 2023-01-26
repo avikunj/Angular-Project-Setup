@@ -5,6 +5,11 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
+    "config": "ts-node ./scripts/setenv.js",
+    "start:local": "env-cmd -f ./.env.local npm run config -- --environment=local  && ng serve",
+    "start:dev": "env-cmd -f ./.env.development npm run config -- --environment=dev && ng serve",
+    "start:prod": "env-cmd -f ./.env.production npm run config -- --environment=prod && ng serve",
+    "build:dev": "npm run config -- --environment=dev && ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "lint": "ng lint",
@@ -23,6 +28,7 @@
     "@angular/platform-browser-dynamic": "^15.1.0",
     "@angular/router": "^15.1.0",
     "@ngrx/store": "^15.1.0",
+    "env-cmd": "^10.1.0",
     "eslint-config-prettier": "^8.6.0",
     "eslint-plugin-prettier": "^4.2.1",
     "husky": "^8.0.3",
@@ -30,6 +36,7 @@
     "prettier-eslint": "^15.0.1",
     "rxjs": "~7.8.0",
     "save-dev": "^0.0.1-security",
+    "ts-node": "^10.9.1",
     "tslib": "^2.3.0",
     "zone.js": "~0.12.0"
   },
@@ -46,6 +53,7 @@
     "@types/jasmine": "~4.3.0",
     "@typescript-eslint/eslint-plugin": "5.48.1",
     "@typescript-eslint/parser": "5.48.1",
+    "dotenv": "^16.0.3",
     "eslint": "^8.31.0",
     "jasmine-core": "~4.5.0",
     "karma": "~6.4.0",
@@ -53,6 +61,7 @@
     "karma-coverage": "~2.2.0",
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "~2.0.0",
-    "typescript": "~4.9.4"
+    "typescript": "~4.9.4",
+    "yargs": "^17.6.2"
   }
 }
