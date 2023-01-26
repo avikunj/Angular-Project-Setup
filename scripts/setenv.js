@@ -7,22 +7,7 @@ require('dotenv').config();
 // read the command line arguments passed with yargs
 const environment = argv.environment;
 const isProduction = environment === 'prod';
-let targetPath = '';
-
-switch (environment) {
-   case "prod":
-     targetPath = `./src/environments/environment.prod.ts`
-      break;
-   case "dev":
-     targetPath = `./src/environments/environment.dev.ts`
-      break;
-   case "local":
-      targetPath = `./src/environments/environment.local.ts`  
-   break; 
-   default:
-      targetPath = `./src/environments/environment.local.ts`
-      break;
-}
+let targetPath = './src/environments/environment.ts';
 
 // we have access to our environment variables
 // in the process.env object thanks to dotenv
