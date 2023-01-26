@@ -13,7 +13,7 @@
     "build:dev": "env-cmd -f ./.env.development npm run config -- --environment=dev && ng build",
     "build:prod": "env-cmd -f ./.env.production npm run config -- --environment=prod && ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test",
+    "test": "ng test --no-watch --no-progress",
     "lint": "ng lint",
     "lint:watch": "nodemon --exec \"npm run lint || exit 1\"",
     "format": "npx prettier src --write",

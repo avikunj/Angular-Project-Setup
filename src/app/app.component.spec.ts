@@ -19,7 +19,7 @@ describe('AppComponent', () => {
   it(`should have as title 'angular_setup'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('angular_setup');
+    expect(app.title).toEqual('Angular Setup');
   });
 
   it('should render title', () => {
@@ -27,7 +27,7 @@ describe('AppComponent', () => {
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
     expect(compiled.querySelector('.content span')?.textContent).toContain(
-      'angular_setup app is running!'
+      'Angular Setup app is running!'
     );
   });
 });
