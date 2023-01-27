@@ -29,8 +29,8 @@ jobs:
     - run: npm ci
     - run: npm run lint
       name: Lint Check
-    - run: npm run test
-      name: Running Test Cases
+    - name: Cypress run
+      uses: cypress-io/github-action@v5.x.x # use the explicit version number
     - run: npm run build --if-present
     
   #   - name: FTP Deploy
