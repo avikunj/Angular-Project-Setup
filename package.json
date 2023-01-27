@@ -15,9 +15,10 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test --browsers=ChromeHeadless  --no-watch --no-progress --code-coverage",
     "lint": "ng lint",
-    "lint:watch": "nodemon --exec \"npm run lint || exit 1\"",
+    "lint:watch": "nodemon --exec \"npm run lint src/ || exit 1\"",
     "format": "npx prettier src --write",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "cypress:open": "cypress open"
   },
   "private": true,
   "dependencies": {
@@ -44,7 +45,7 @@
     "zone.js": "~0.12.0"
   },
   "lint-staged": {
-    "*.js|*.jsx|*.tsx|*.ts|*.html|*.css|*.scss": [
+    "*.tsx|*.ts|*.html|*.css|*.scss": [
       "prettier --write",
       "eslint --fix"
     ]
@@ -62,6 +63,7 @@
     "@types/jasmine": "~4.3.0",
     "@typescript-eslint/eslint-plugin": "5.48.1",
     "@typescript-eslint/parser": "5.48.1",
+    "cypress": "^12.4.1",
     "dotenv": "^16.0.3",
     "eslint": "^8.31.0",
     "jasmine-core": "~4.5.0",
