@@ -7,6 +7,7 @@ import { StoreModule } from '@ngrx/store';
 import { counterReducer } from './store/reducers/counter/counter.reducer';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { MyCounterComponent } from './modules/my-counter/my-counter.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [AppComponent, MyCounterComponent],
@@ -20,6 +21,7 @@ import { MyCounterComponent } from './modules/my-counter/my-counter.component';
       {}
     ),
     StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: !isDevMode() }),
+    BrowserAnimationsModule,
   ],
   providers: [],
   bootstrap: [AppComponent, MyCounterComponent],
